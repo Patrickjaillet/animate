@@ -39,38 +39,32 @@ résultat en vidéo via FFmpeg.
 
 L'espace de travail réunit quatre zones redimensionnables : **Bibliothèque**
 (gauche), **Canvas de scène** (centre, rendu SkiaSharp), **Inspecteur de
-propriétés** (droite) et **Timeline** (bas). Le rendu du canvas tient largement
-au-delà de 60 fps sur un plan chargé (voir [docs/PERFORMANCE.md](docs/PERFORMANCE.md)).
+propriétés** (droite) et **Timeline** (bas), plus une **barre de plans** pour
+les projets multi-scènes. Le rendu du canvas tient largement au-delà de 60 fps
+sur un plan chargé (voir [PERFORMANCE.md](docs/PERFORMANCE.md)).
 
 ## Fonctionnalités
 
-- [x] Écran d'accueil, modèles et démarrage d'un nouveau projet
-- [x] Panneaux redimensionnables, masquables et restaurables
-- [x] Barre de statut (zoom, fps, durée, état de sauvegarde)
-- [x] Notifications toast et transitions animées du shell
-- [x] Modèle de projet, scènes, calques et références d'assets
-- [x] Keyframes avec interpolations linéaire, easing et stepped
-- [x] Persistance JSON versionnée des fichiers `.animate` et auto-save récupérable
-- [x] Undo/Redo global et réorganisation des scènes
-- [x] Bibliothèque d'assets avec recherche, catégories, tags, favoris et import
-- [x] Glisser-déposer d'un asset vers le Canvas pour créer un calque
-- [x] Canvas SkiaSharp avec compositing SVG/bitmap, zoom, pan, sélection et playback
-- [x] Compositing par z-index avec transformations, opacité et clipping par calque
-- [x] Grille, règles graduées, guides d'alignement et snapping configurable
-- [x] Masques de découpe rectangulaires/elliptiques et calques texte
-  (bulles de dialogue, cartons de titre)
-- [x] Timeline custom avec pistes, keyframes, règle, scrub et lecture synchronisée
-- [x] Marqueurs de scènes, audio synchronisé avec waveform et cycles d’animation
-- [x] Lip-sync simplifié avec mapping phonème → variante de bouche
-- [x] Inspecteur de calques avec transformations, opacité, couleurs et effets
-- [x] Génération de vignettes PNG mises en cache pour les sources SVG/PNG
-- [x] Réorganisation drag & drop des calques et clips de Timeline
-- [x] Export MP4 H.264/AAC via FFmpeg embarqué, avec mixage audio et fondus
-- [x] Canvas de scène SkiaSharp (rendu > 60 fps sur plan chargé)
-- [x] Timeline à keyframes avec lecture temps réel
-- [x] Presets d'export 480p / 1080p et file d'attente séquentielle
-- [x] Interface Français / Anglais avec changement de langue à chaud
-- [x] Raccourcis de sauvegarde/ouverture configurables et projets récents avec miniature
+- **Bibliothèque d'assets** — personnages, décors, objets, texte/FX, audio ;
+  recherche, catégories, tags, favoris, import de SVG/PNG.
+- **Canvas SkiaSharp** — compositing par z-index, transformations, opacité,
+  masques de découpe, grille/règles/guides/snapping, zoom/pan, sélection et
+  manipulation directe.
+- **Timeline à keyframes** — pistes par calque, interpolations linéaire /
+  ease-in / ease-out / stepped, lecture temps réel, marqueurs, audio synchronisé
+  avec waveform, lip-sync simplifié (phonème → bouche), cycles d'animation
+  prédéfinis (marche, parole, idle).
+- **Multi-scènes** — barre de plans : liste, sélection, ajout, réorganisation ;
+  modèle « storyboard » 3 scènes.
+- **Inspecteur** — transformations, opacité, recoloration d'assets vectoriels
+  par zones, effets plats (ombre portée, contour), réglages audio par clip.
+- **Export vidéo** — MP4 H.264/AAC via FFmpeg embarqué, mixage audio (volume,
+  position, fondus), presets 480p / 1080p, file d'attente, export d'image fixe,
+  progression en temps réel.
+- **Projet `.animate`** — JSON versionné SemVer, migration ascendante,
+  undo/redo global, auto-save toutes les 30 s et récupération après crash.
+- **Interface française et anglaise**, changement de langue à chaud.
+- **Projets récents** avec vignette de la dernière scène.
 
 ## Captures d'écran
 
@@ -90,17 +84,19 @@ au-delà de 60 fps sur un plan chargé (voir [docs/PERFORMANCE.md](docs/PERFORMA
 
 ## Téléchargement
 
-La dernière version est publiée sur la page
-[**Releases**](https://github.com/patrickjaillet/animate/releases) du dépôt :
-téléchargez l'installateur `Animate-<version>-Setup.exe`.
+Rendez-vous sur la page
+[**Releases**](https://github.com/Patrickjaillet/animate/releases/latest) :
+
+- **`Animate-1.0.0-Setup.exe`** — installateur Windows (recommandé) ;
+- **`Animate-1.0.0-win-x64.zip`** — version portable (décompresser et lancer
+  `Animate.exe`).
 
 ## Installation
 
-L'installateur Windows 11 est généré avec Inno Setup 7. Il installe les
-binaires, FFmpeg, les assets et les fichiers i18n, puis peut créer un raccourci
-Bureau et associer les fichiers `.animate` à Animate. La désinstallation se fait
-depuis *Paramètres Windows › Applications* et retire l'ensemble des fichiers
-installés.
+L'installateur installe l'application, FFmpeg, les assets et les fichiers de
+langue, puis peut créer un raccourci Bureau et associer les fichiers `.animate`.
+La désinstallation se fait depuis *Paramètres Windows › Applications* et retire
+l'ensemble des fichiers installés.
 
 ## Utilisation rapide
 
@@ -134,14 +130,13 @@ d'utilisation.
 
 Animate embarque et/ou s'appuie sur les composants tiers suivants :
 
-- **FFmpeg** — encodage vidéo (mention légale complète dans l'onglet
-  *À propos* du logiciel)
-- **Baloo 2** (The Baloo 2 Project Authors) — police display arrondie
-  (titres, en-têtes), licence [SIL Open Font License 1.1](assets/fonts/Baloo2/OFL.txt)
-- **JetBrains Mono** (The JetBrains Mono Project Authors) — police technique
-  (UI dense, valeurs numériques), licence [SIL Open Font License 1.1](assets/fonts/JetBrainsMono/OFL.txt)
-- Bibliothèques .NET utilisées lors de la compilation, sous leurs licences
-  open-source respectives
+- **FFmpeg** — encodage vidéo (binaire embarqué ; mention légale complète dans
+  l'onglet *À propos* du logiciel : licence LGPL/GPL selon les composants)
+- **Baloo 2** (The Baloo 2 Project Authors) — police display arrondie,
+  [SIL Open Font License 1.1](https://openfontlicense.org/)
+- **JetBrains Mono** (The JetBrains Mono Project Authors) — police technique,
+  [SIL Open Font License 1.1](https://openfontlicense.org/)
+- Runtime .NET 8 et SkiaSharp, embarqués, sous leurs licences respectives
 
 ## À propos
 
@@ -150,11 +145,3 @@ Copyright © 2026 Patrick JAILLET — Tous droits réservés
 E-mail : sandefjord.development@proton.me
 Site web : https://patrickjaillet.github.io/animate
 
----
-
-<div align="center">
-
-_Ce fichier est mis à jour à chaque implémentation notable, conformément aux
-conventions de développement du projet._
-
-</div>

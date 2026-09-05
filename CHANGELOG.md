@@ -315,6 +315,6 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
   ressources de déploiement (i18n, assets, ffmpeg), avec vérification
   stricte de l'absence de tout fichier source
 
-[Unreleased]: https://github.com/patrickjaillet/animate/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/patrickjaillet/animate/releases/tag/v1.0.0
-[0.1.0]: https://github.com/patrickjaillet/animate/releases/tag/v0.1.0
+[Unreleased]: https://github.com/Patrickjaillet/animate/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/Patrickjaillet/animate/releases/tag/v1.0.0
+[0.1.0]: https://github.com/Patrickjaillet/animate/releases/tag/v0.1.0
