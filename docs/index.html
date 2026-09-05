@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Animate — Studio d'animation 2D cutout pour Windows 11</title>
+<meta name="description" content="Animate : logiciel d'animation 2D en cutout avec bibliothèque d'assets, timeline à keyframes et export vidéo MP4 via FFmpeg. Freeware, Windows 11.">
+<meta property="og:title" content="Animate — Studio d'animation 2D cutout">
+<meta property="og:description" content="Composer, animer et exporter des plans 2D cutout sur Windows 11. Freeware.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --bg:#101116; --bg-elevated:#16171C; --surface:#1A1C22; --surface-raised:#20222A;
+    --border:#2A2C34; --border-strong:#34363F;
+    --text:#F2F1ED; --text-2:#B7B8C2; --text-muted:#8A8C96;
+    --orange:#FF6A3D; --orange-hover:#FF7E56; --blue:#3E8DFF; --red:#E6483C; --green:#3FBE72;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif; line-height:1.6;
+  }
+  a{color:var(--blue); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px}
+  header{
+    border-bottom:1px solid var(--border);
+    background:linear-gradient(180deg,var(--bg-elevated),var(--bg));
+    padding:72px 0 64px;
+  }
+  .brand{display:flex; align-items:center; gap:14px; margin-bottom:28px}
+  .glyph{width:34px; height:34px; flex:0 0 auto}
+  .brand-name{font-size:1.4rem; font-weight:700; letter-spacing:.5px}
+  h1{font-size:clamp(2rem,4.5vw,3.2rem); line-height:1.15; margin:0 0 16px; font-weight:700}
+  .lede{font-size:1.15rem; color:var(--text-2); max-width:620px; margin:0 0 32px}
+  .cta{display:flex; flex-wrap:wrap; gap:14px; align-items:center}
+  .btn{
+    display:inline-block; padding:13px 26px; border-radius:6px; font-weight:600;
+    background:var(--orange); color:#101116;
+  }
+  .btn:hover{background:var(--orange-hover); text-decoration:none}
+  .btn.secondary{background:var(--surface-raised); color:var(--text); border:1px solid var(--border-strong)}
+  .btn.secondary:hover{background:var(--surface)}
+  .meta{color:var(--text-muted); font-size:.9rem}
+  section{padding:64px 0; border-bottom:1px solid var(--border)}
+  h2{font-size:1.7rem; margin:0 0 28px; font-weight:700}
+  .features{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px}
+  .card{background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:22px}
+  .card h3{margin:0 0 8px; font-size:1.05rem}
+  .card p{margin:0; color:var(--text-2); font-size:.95rem}
+  .shots{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:22px}
+  figure{margin:0}
+  figure img{width:100%; border:1px solid var(--border-strong); border-radius:8px; display:block}
+  figcaption{color:var(--text-muted); font-size:.88rem; margin-top:8px}
+  ul.plain{list-style:none; padding:0; margin:0}
+  ul.plain li{padding:6px 0; color:var(--text-2)}
+  ul.plain li::before{content:"▸ "; color:var(--orange)}
+  footer{padding:48px 0 64px; color:var(--text-muted); font-size:.9rem}
+  footer a{color:var(--text-2)}
+  code{background:var(--surface-raised); padding:2px 6px; border-radius:4px; font-size:.9em}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <svg class="glyph" viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M 0,4 L 4,0 L 16,0 L 16,12 L 12,16 L 0,16 Z" fill="#FF6A3D"/>
+      </svg>
+      <span class="brand-name">Animate</span>
+    </div>
+    <h1>Studio d'animation 2D cutout pour Windows&nbsp;11</h1>
+    <p class="lede">
+      Composez des scènes à partir d'une bibliothèque d'assets, animez vos
+      personnages sur une timeline à keyframes, puis exportez en vidéo MP4.
+      Gratuit.
+    </p>
+    <div class="cta">
+      <a class="btn" href="https://github.com/patrickjaillet/animate/releases">Télécharger</a>
+      <a class="btn secondary" href="https://github.com/patrickjaillet/animate">Code &amp; suivi sur GitHub</a>
+      <span class="meta">Freeware · Windows 11 x64 · installateur autonome</span>
+    </div>
+  </div>
+</header>
+
+<section id="apercu">
+  <div class="wrap">
+    <h2>Aperçu</h2>
+    <div class="shots">
+      <figure>
+        <img src="img/01-accueil.png" alt="Écran d'accueil d'Animate : nouveau projet, modèles, projets récents">
+        <figcaption>Écran d'accueil — nouveau projet, modèles, reprise du fil.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/02-canvas-bibliotheque.png" alt="Espace de travail : bibliothèque d'assets, canvas de scène, inspecteur">
+        <figcaption>Bibliothèque · Canvas SkiaSharp · Inspecteur · Timeline.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/03-timeline.png" alt="Timeline avec pistes, règle temporelle et marqueurs de scène">
+        <figcaption>Timeline — pistes, marqueurs, règle temporelle, scrub.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/04-export.png" alt="Notification de fin d'export vidéo MP4">
+        <figcaption>Export MP4 H.264/AAC via FFmpeg embarqué.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="fonctionnalites">
+  <div class="wrap">
+    <h2>Fonctionnalités</h2>
+    <div class="features">
+      <div class="card">
+        <h3>Bibliothèque d'assets</h3>
+        <p>Personnages, décors, objets, texte/FX et audio. Recherche, catégories,
+        tags, favoris et import de vos propres SVG / PNG.</p>
+      </div>
+      <div class="card">
+        <h3>Canvas SkiaSharp</h3>
+        <p>Compositing SVG et bitmap par z-index, transformations, opacité,
+        masques de découpe, grille, règles, guides et snapping. Rendu au-delà
+        de 60&nbsp;fps sur un plan chargé.</p>
+      </div>
+      <div class="card">
+        <h3>Timeline à keyframes</h3>
+        <p>Pistes par calque, interpolations linéaire / easing / stepped,
+        lecture temps réel, marqueurs de scène, audio synchronisé et lip-sync
+        simplifié.</p>
+      </div>
+      <div class="card">
+        <h3>Inspecteur</h3>
+        <p>Édition fine des transformations, de l'opacité, de la recoloration
+        des assets vectoriels et des effets plats (ombre portée, contour).</p>
+      </div>
+      <div class="card">
+        <h3>Export vidéo</h3>
+        <p>MP4 H.264/AAC via FFmpeg embarqué, mixage audio avec volume et
+        fondus, presets 480p / 1080p, file d'attente et export d'image fixe.</p>
+      </div>
+      <div class="card">
+        <h3>Projet &amp; i18n</h3>
+        <p>Format <code>.animate</code> JSON versionné, auto-save récupérable,
+        undo/redo global. Interface française et anglaise, changement de langue
+        à chaud.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="installation">
+  <div class="wrap">
+    <h2>Installation</h2>
+    <ul class="plain">
+      <li>Téléchargez <code>Animate-&lt;version&gt;-Setup.exe</code> depuis la page Releases.</li>
+      <li>Lancez l'installateur : il installe l'application, FFmpeg, les assets et les fichiers de langue.</li>
+      <li>Raccourci Bureau optionnel et association des fichiers <code>.animate</code>.</li>
+      <li>Désinstallation propre depuis <em>Paramètres Windows › Applications</em>.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="licence">
+  <div class="wrap">
+    <h2>Licence</h2>
+    <p>
+      Animate est distribué en <strong>Freeware</strong> : l'exécutable et les
+      ressources de déploiement sont fournis, le code source ne l'est pas.
+      L'encodage vidéo s'appuie sur <strong>FFmpeg</strong> (mention légale
+      complète dans l'onglet <em>À propos</em> du logiciel). Polices
+      <strong>Baloo&nbsp;2</strong> et <strong>JetBrains&nbsp;Mono</strong> sous
+      SIL Open Font License 1.1.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>
+      <strong>Animate</strong> — Copyright © 2026 Patrick JAILLET — Tous droits réservés<br>
+      E-mail : <a href="mailto:sandefjord.development@proton.me">sandefjord.development@proton.me</a><br>
+      Site : <a href="https://patrickjaillet.github.io/animate">patrickjaillet.github.io/animate</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

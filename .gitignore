@@ -1,0 +1,73 @@
+# =========================================================================
+# Documents de travail internes — jamais publiés sur le dépôt public
+# =========================================================================
+ROADMAP.md
+CLAUDE.md
+COMPILATION.md
+GITHUB_DEPOT.md
+
+# =========================================================================
+# Code source — jamais publié (Licence Freeware, exécutable propriétaire)
+# =========================================================================
+*.zip
+src/
+tests/
+Animate.sln
+.editorconfig
+Directory.Build.props
+version.json
+build_log.txt
+THEME_STUDIO_IMPLEMENTATION.md
+installer/
+
+# Sources d'assets et i18n à la racine (matériaux de dev). Les exemplaires
+# publiés sont dans dist/app/.
+/assets/
+/i18n/
+
+# Fichiers .props potentiellement sensibles (clés de signature, chemins locaux, etc.)
+# Directory.Build.props reste public : seuls des .props secondaires sont exclus.
+*.local.props
+*.secrets.props
+
+# =========================================================================
+# Artefacts de build .NET
+# =========================================================================
+bin/
+obj/
+out/
+publish/
+
+# dist/ (binaires + installateur) n'est jamais commité : le dépôt public est
+# une vitrine. L'installateur et le paquet sont attachés à la GitHub Release
+# (voir GITHUB_DEPOT.md).
+dist/
+
+# =========================================================================
+# Visual Studio / Rider / VS Code
+# =========================================================================
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# =========================================================================
+# Divers
+# =========================================================================
+*.log
+*.tmp
+Thumbs.db
+.DS_Store
+
+# Binaire FFmpeg (embarqué dans la distribution, jamais dans le dépôt)
+/ffmpeg/
+
+# Scripts de release locaux (outil de dev, non publiable en CI)
+scripts/
+
+# Certificats de signature de code — jamais versionnés
+*.pfx
+*.snk

@@ -1,0 +1,78 @@
+Animate — Licence Freeware
+
+Copyright © 2026 Patrick JAILLET — Tous droits réservés
+
+E-mail : sandefjord.development@proton.me
+Site web : https://patrickjaillet.github.io/animate
+
+---
+
+1. OBJET
+
+La présente licence régit l'utilisation du logiciel Animate ("le Logiciel"),
+distribué exclusivement sous forme d'exécutable compilé et de ses ressources
+associées (fichiers de localisation, assets, binaires tiers embarqués).
+
+Le code source du Logiciel N'EST PAS fourni et reste la propriété exclusive
+de Patrick JAILLET.
+
+2. CONCESSION DE LICENCE
+
+Sous réserve du respect des présentes conditions, l'auteur concède à tout
+utilisateur une licence non exclusive, non transférable, gratuite (Freeware),
+d'utilisation du Logiciel pour un usage personnel ou professionnel.
+
+Il est permis de :
+  - Installer et utiliser le Logiciel sur autant de postes Windows 11
+    personnels que souhaité ;
+  - Redistribuer l'exécutable et les ressources tels que fournis par
+    l'installateur officiel, sans modification.
+
+3. RESTRICTIONS
+
+Il est interdit de :
+  - Décompiler, désassembler ou tenter d'extraire le code source du
+    Logiciel, sauf dans les limites autorisées par la loi applicable ;
+  - Modifier, adapter ou créer une œuvre dérivée du Logiciel ;
+  - Vendre, louer ou monétiser le Logiciel sous quelque forme que ce soit ;
+  - Retirer ou altérer les mentions de copyright, de licence ou d'attribution
+    présentes dans le Logiciel ou sa documentation ;
+  - Utiliser le nom, la marque ou les visuels d'Animate pour promouvoir un
+    produit dérivé sans autorisation écrite préalable de l'auteur.
+
+4. COMPOSANTS TIERS
+
+Le Logiciel intègre des composants tiers sous leurs licences respectives,
+notamment :
+  - FFmpeg (binaire embarqué) — voir la mention légale dans l'onglet
+    « À propos » du Logiciel et le fichier d'attribution fourni avec la
+    distribution ;
+  - Bibliothèques .NET et composants d'interface utilisés lors de la
+    compilation, sous leurs licences open-source respectives (MIT, Apache 2.0
+    ou équivalent), n'entraînant aucune obligation de fourniture du code
+    source d'Animate lui-même.
+
+5. ABSENCE DE GARANTIE
+
+LE LOGICIEL EST FOURNI "EN L'ÉTAT", SANS GARANTIE D'AUCUNE SORTE, EXPRESSE
+OU IMPLICITE, Y COMPRIS MAIS SANS S'Y LIMITER LES GARANTIES DE QUALITÉ
+MARCHANDE, D'ADÉQUATION À UN USAGE PARTICULIER ET D'ABSENCE DE CONTREFAÇON.
+EN AUCUN CAS L'AUTEUR NE POURRA ÊTRE TENU RESPONSABLE DE TOUT DOMMAGE
+DIRECT, INDIRECT, ACCESSOIRE OU CONSÉCUTIF RÉSULTANT DE L'UTILISATION OU DE
+L'IMPOSSIBILITÉ D'UTILISER LE LOGICIEL.
+
+6. DURÉE ET RÉSILIATION
+
+La présente licence est effective jusqu'à sa résiliation. Elle prend fin
+automatiquement en cas de non-respect de l'une de ses conditions, auquel cas
+l'utilisateur doit cesser toute utilisation du Logiciel et détruire toute
+copie en sa possession.
+
+7. DROIT APPLICABLE
+
+La présente licence est régie par le droit français.
+
+---
+
+Pour toute question relative à cette licence, contacter :
+sandefjord.development@proton.me
